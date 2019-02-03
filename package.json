@@ -20,5 +20,9 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "ruucm-util": "^0.11.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "sass": "^1.16.1"
   }
 }
