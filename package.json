@@ -19,6 +19,8 @@
     "parcel-bundler": "latest",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
     "ruucm-util": "^0.11.0"
   },
   "devDependencies": {
