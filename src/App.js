@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './app.scss'
 import { connect } from 'react-redux'
 import store from './store'
+import map from 'lodash/map'
 
 class App extends Component {
   constructor(props) {
@@ -48,6 +49,28 @@ class App extends Component {
         >
           DECREMENT
         </button>
+
+        <div>test array</div>
+        {console.log('this.props.testArray', this.props.testArray)}
+        {map(this.props.testArray, (item, id) => {
+          return <div key={id}>{item.text}</div>
+        })}
+
+        <button
+          onClick={() => {
+            store.dispatch({
+              type: 'UPDATE_ARRAY',
+              data: [
+                ...this.props.testArray, // for non mutating update to avoid not re-render
+                {
+                  text: 'c',
+                },
+              ],
+            })
+          }}
+        >
+          UPDATE ARRAY
+        </button>
       </div>
     )
   }
@@ -56,6 +79,7 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
     count: state.count,
+    testArray: state.testArray,
   }
 }
 
