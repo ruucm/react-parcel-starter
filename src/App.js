@@ -3,6 +3,7 @@ import './app.scss'
 import { connect } from 'react-redux'
 import store from './store'
 import map from 'lodash/map'
+import Comp01 from './Comp01'
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    alert('componentDidMount')
+    console.log('componentDidMount')
   }
   render() {
     return (
@@ -71,6 +72,8 @@ class App extends Component {
         >
           UPDATE ARRAY
         </button>
+
+        <Comp01 />
       </div>
     )
   }
