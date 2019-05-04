@@ -4,7 +4,7 @@ import store from './store'
 import map from 'lodash/map'
 import Comp01 from './Comp01'
 
-class Playground extends Component {
+class ReactBasics extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -84,4 +84,4 @@ function mapStateToProps(state) {
     testArray: state.testArray,
   }
 }
-export default connect(mapStateToProps)(Playground)
+export default connect(mapStateToProps)(ReactBasics)

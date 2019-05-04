@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import './app.scss'
 
-import Playground from './Playground'
+import ReactBasics from './ReactBasics'
 import App from './App'
 
 function AppRouter() {
@@ -13,10 +13,10 @@ function AppRouter() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/playground/">Playground</Link>
+          <Link to="/ReactBasics/">ReactBasics</Link>
         </li>
         <Route path="/" exact component={App} />
-        <Route path="/playground/" component={Playground} />
+        <Route path="/ReactBasics/" component={ReactBasics} />
       </div>
     </Router>
   )
