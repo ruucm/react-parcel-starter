@@ -4,6 +4,7 @@ import store from './store'
 import map from 'lodash/map'
 import UseHoverComp from './UseHoverComp'
 import UseDataApiComp from './UseDataApiComp'
+import UseMemoComp from './UseMemoComp'
 
 class ReactBasics extends Component {
   constructor(props) {
@@ -75,8 +76,12 @@ class ReactBasics extends Component {
 
         <h1>react hooks</h1>
 
+        <h2>useHover</h2>
         <UseHoverComp />
+        <h2>useDataApi</h2>
         <UseDataApiComp />
+        <h2>useMemo</h2>
+        <UseMemoComp />
       </div>
     )
   }
