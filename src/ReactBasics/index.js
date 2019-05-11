@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import store from './store'
 import map from 'lodash/map'
-import Comp01 from './Comp01'
+import UseHoverComp from './UseHoverComp'
 
 class ReactBasics extends Component {
   constructor(props) {
@@ -72,7 +72,7 @@ class ReactBasics extends Component {
           UPDATE ARRAY
         </button>
 
-        <Comp01 />
+        <UseHoverComp />
       </div>
     )
   }

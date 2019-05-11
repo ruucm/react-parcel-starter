@@ -1,7 +1,7 @@
 import React from 'react'
 import useHover from './useHover'
 
-function Comp01() {
+function UseHoverComp() {
   const [hoverRef, isHovered] = useHover()
   const [hoverRef2, isHovered2] = useHover()
 
@@ -39,4 +39,4 @@ function Comp01() {
   )
 }
 
-export default Comp01
+export default UseHoverComp
