@@ -15,7 +15,9 @@
   "author": "ruucm",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-preset-react-app": "^3.1.0",
+    "framer": "1.0.0-beta.16",
     "lodash": "^4.17.11",
     "parcel-bundler": "latest",
     "react": "^16.8.6",
@@ -23,8 +25,7 @@
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
-    "ruucm-util": "^0.11.0",
-    "framer": "1.0.0-beta.16"
+    "ruucm-util": "^0.11.0"
   },
   "devDependencies": {
     "node-sass": "^4.11.0",

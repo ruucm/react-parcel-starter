@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import store from './store'
 import map from 'lodash/map'
 import UseHoverComp from './UseHoverComp'
+import UseDataApiComp from './UseDataApiComp'
 
 class ReactBasics extends Component {
   constructor(props) {
@@ -72,7 +73,10 @@ class ReactBasics extends Component {
           UPDATE ARRAY
         </button>
 
+        <h1>react hooks</h1>
+
         <UseHoverComp />
+        <UseDataApiComp />
       </div>
     )
   }

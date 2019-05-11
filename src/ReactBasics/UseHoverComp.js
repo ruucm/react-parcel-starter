@@ -7,7 +7,6 @@ function UseHoverComp() {
 
   return (
     <div>
-      <h1>react hooks</h1>
       <div
         ref={hoverRef}
         style={{
