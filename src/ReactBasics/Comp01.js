@@ -1,5 +1,5 @@
 import React from 'react'
-import useHover from './use-hover'
+import useHover from './useHover'
 
 function Comp01() {
   const [hoverRef, isHovered] = useHover()
