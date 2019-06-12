@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrap = styled.div`
+const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-columns: center;
 `
 
-const Item = styled.div`
+const Column = styled.div`
   background: green;
   flex: 0 0 33.3%;
 `
@@ -19,20 +19,20 @@ const Content = styled.div`
 
 function Flex() {
   return (
-    <Wrap>
-      <Item>
+    <Row>
+      <Column>
         <Content>1</Content>
-      </Item>
-      <Item>
+      </Column>
+      <Column>
         <Content>2</Content>
-      </Item>
-      <Item>
+      </Column>
+      <Column>
         <Content>3</Content>
-      </Item>
-      <Item>
+      </Column>
+      <Column>
         <Content>4</Content>
-      </Item>
-    </Wrap>
+      </Column>
+    </Row>
   )
 }
 
