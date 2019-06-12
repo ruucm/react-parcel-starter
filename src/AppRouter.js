@@ -5,6 +5,7 @@ import './app.scss'
 import App from './App'
 import ReactBasics from './ReactBasics'
 import Framer from './Framer'
+import Flex from './Flex'
 
 function AppRouter() {
   return (
@@ -21,11 +22,16 @@ function AppRouter() {
           <li>
             <Link to="/framer/">Framer</Link>
           </li>
+
+          <li>
+            <Link to="/flex/">Flex</Link>
+          </li>
         </ul>
 
         <Route path="/" exact component={App} />
         <Route path="/react-basics/" component={ReactBasics} />
         <Route path="/framer/" component={Framer} />
+        <Route path="/flex/" component={Flex} />
       </div>
     </Router>
   )
