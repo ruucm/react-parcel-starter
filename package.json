@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
+    "start": "parcel index.html --hmr-hostname 0.0.0.0",
     "build": "parcel build index.html"
   },
   "repository": {
