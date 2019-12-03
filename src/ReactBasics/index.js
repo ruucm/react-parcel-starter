@@ -1,24 +1,25 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import store from './store'
-import map from 'lodash/map'
-import UseHoverComp from './UseHoverComp'
-import UseDataApiComp from './UseDataApiComp'
-import UseMemoComp from './UseMemoComp'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import store from "./store";
+import map from "lodash/map";
+import UseHoverComp from "./UseHoverComp";
+import UseDataApiComp from "./UseDataApiComp";
+import UseMemoComp from "./UseMemoComp";
+import TestComp from "./TestComp";
 
 class ReactBasics extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      name: '',
-    }
+      name: ""
+    };
   }
   handleChange(event) {
-    this.setState({ name: event.target.value })
+    this.setState({ name: event.target.value });
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
+    console.log("componentDidMount");
   }
   render() {
     return (
@@ -38,7 +39,7 @@ class ReactBasics extends Component {
         <div>count : {this.props.count}</div>
         <button
           onClick={() => {
-            store.dispatch({ type: 'INCREMENT' })
+            store.dispatch({ type: "INCREMENT" });
           }}
         >
           INCREMENT
@@ -46,29 +47,31 @@ class ReactBasics extends Component {
 
         <button
           onClick={() => {
-            store.dispatch({ type: 'DECREMENT' })
+            store.dispatch({ type: "DECREMENT" });
           }}
         >
           DECREMENT
         </button>
 
+        <TestComp />
+
         <div>test array</div>
-        {console.log('this.props.testArray', this.props.testArray)}
+        {console.log("this.props.testArray", this.props.testArray)}
         {map(this.props.testArray, (item, id) => {
-          return <div key={id}>{item.text}</div>
+          return <div key={id}>{item.text}</div>;
         })}
 
         <button
           onClick={() => {
             store.dispatch({
-              type: 'UPDATE_ARRAY',
+              type: "UPDATE_ARRAY",
               data: [
                 ...this.props.testArray, // for non mutating update to avoid not re-render
                 {
-                  text: 'c',
-                },
-              ],
-            })
+                  text: "c"
+                }
+              ]
+            });
           }}
         >
           UPDATE ARRAY
@@ -83,14 +86,14 @@ class ReactBasics extends Component {
         <h2>useMemo</h2>
         <UseMemoComp />
       </div>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
   return {
     count: state.count,
-    testArray: state.testArray,
-  }
+    testArray: state.testArray
+  };
 }
-export default connect(mapStateToProps)(ReactBasics)
+export default connect(mapStateToProps)(ReactBasics);
