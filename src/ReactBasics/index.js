@@ -6,6 +6,7 @@ import UseHoverComp from "./UseHoverComp";
 import UseDataApiComp from "./UseDataApiComp";
 import UseMemoComp from "./UseMemoComp";
 import TestComp from "./TestComp";
+import { TestReduxForm } from "./TestReduxForm";
 
 class ReactBasics extends Component {
   constructor(props) {
@@ -54,6 +55,7 @@ class ReactBasics extends Component {
         </button>
 
         <TestComp />
+        <TestReduxForm />
 
         <div>test array</div>
         {console.log("this.props.testArray", this.props.testArray)}
