@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import store from "./store";
 import map from "lodash/map";
 import UseHoverComp from "./UseHoverComp";
 import UseDataApiComp from "./UseDataApiComp";
@@ -40,7 +39,7 @@ class ReactBasics extends Component {
         <div>count : {this.props.count}</div>
         <button
           onClick={() => {
-            store.dispatch({ type: "INCREMENT" });
+            this.props.dispatch({ type: "INCREMENT" });
           }}
         >
           INCREMENT
@@ -48,7 +47,7 @@ class ReactBasics extends Component {
 
         <button
           onClick={() => {
-            store.dispatch({ type: "DECREMENT" });
+            this.props.dispatch({ type: "DECREMENT" });
           }}
         >
           DECREMENT
@@ -65,7 +64,7 @@ class ReactBasics extends Component {
 
         <button
           onClick={() => {
-            store.dispatch({
+            this.props.dispatch({
               type: "UPDATE_ARRAY",
               data: [
                 ...this.props.testArray, // for non mutating update to avoid not re-render
