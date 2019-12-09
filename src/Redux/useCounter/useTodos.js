@@ -5,19 +5,19 @@ import { useSelector } from "react-redux";
 import useAction from "./useAction";
 import { createSelector } from "reselect";
 
-export default function useCounter() {
+export default function useTodos() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const fetchTodos = useAction(() => dispatch => {
-    return fetch("https://jsonplaceholder.typicode.com/todos")
-      .then(response => response.json())
-      .then(json => {
-        console.log("json", json);
-        return dispatch({
-          type: "RECEIVE_TODOS",
-          payload: json
-        });
+    setTimeout(() => {
+      return dispatch({
+        type: "RECEIVE_TODOS",
+        payload: [
+          { id: 0, title: "yap" },
+          { id: 1, title: "haha" }
+        ]
       });
+    }, 1000);
   });
   const todos = useSelector(getTodos);
   console.log("fetchTodos", fetchTodos);

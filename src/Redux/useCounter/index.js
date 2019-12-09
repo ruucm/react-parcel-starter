@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import useCounter from "./useCounter";
+import useTodos from "./useTodos";
 
 const Comp = ({ count, dispatch }) => {
-  const [todos, loading, error] = useCounter();
+  const [todos, loading, error] = useTodos();
   console.log("todos", todos);
   console.log("loading", loading);
   if (error) throw error;
   return (
     <div>
-      {/* <Link /> */}
       <h2>Todos list</h2>
       {loading && <span>Loading...</span>}
       {!loading &&
