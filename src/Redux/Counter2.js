@@ -19,7 +19,7 @@ const Comp = () => {
 
 function mapStateToProps(state) {
   return {
-    count: state.counterReducer.count
+    count: state.appReducer.count
   };
 }
 export default connect(mapStateToProps)(Comp);

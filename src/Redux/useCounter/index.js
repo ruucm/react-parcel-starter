@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import useTodos from "./useTodos";
+import useCounter from "./useCounter";
 
-const Comp = ({ count, dispatch }) => {
+const Comp = () => {
   const [todos, loading, error] = useTodos();
-  console.log("todos", todos);
-  console.log("loading", loading);
+  if (error) throw error;
+
+  const [count, cLoading, setCount] = useCounter();
+  console.log("count", count);
+  console.log("setCount", setCount);
   if (error) throw error;
   return (
     <div>
@@ -27,9 +31,4 @@ const Comp = ({ count, dispatch }) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    count: state.counterReducer.count
-  };
-}
-export default connect(mapStateToProps)(Comp);
+export default Comp;

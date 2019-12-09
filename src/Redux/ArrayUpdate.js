@@ -31,5 +31,5 @@ const Comp = ({ testArray, dispatch, ...props }) => {
 };
 
 export default connect(state => ({
-  testArray: state.counterReducer.testArray
+  testArray: state.appReducer.testArray
 }))(Comp);

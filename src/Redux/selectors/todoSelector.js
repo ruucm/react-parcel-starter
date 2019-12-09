@@ -5,7 +5,7 @@ export const allTodosIDs = state => {
   console.log("state", state);
   return state.todosReducer.all;
 };
-export const counts = state => state.counterReducer;
+export const counts = state => state.appReducer;
 
 export const makeGetTodoByID = id =>
   createSelector(todosByID, todos => todos[id]);

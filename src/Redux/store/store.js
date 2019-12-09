@@ -1,11 +1,11 @@
-import counterReducer from "./reducer";
+import appReducer from "./reducer";
 import { todosReducer } from "./todosReducer";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { reducer as reduxFormReducer } from "redux-form";
 import thunkMiddleware from "redux-thunk";
 
 const reducer = combineReducers({
-  counterReducer: counterReducer,
+  appReducer: appReducer,
   todosReducer: todosReducer,
   form: reduxFormReducer // mounted under "form"
 });

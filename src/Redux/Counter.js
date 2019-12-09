@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 export const Counter = connect(state => ({
-  count: state.counterReducer.count
+  count: state.appReducer.count
 }))(({ count, dispatch, ...props }) => (
   <div>
     <h1>react-reducer counter</h1>
