@@ -28,7 +28,7 @@ function AppRouter() {
             <Link to="/flex/">Flex</Link>
           </li>
           <li>
-            <Link to="/Redux/">ReduxPage</Link>
+            <Link to="/Redux/">Redux</Link>
           </li>
         </ul>
 

@@ -7,7 +7,7 @@ import Counter2 from "./Counter2";
 import ArrayUpdate from "./ArrayUpdate";
 import { TestReduxForm } from "./TestReduxForm";
 
-function ReduxPage() {
+function Redux() {
   return (
     <Provider store={store}>
       <Counter />
@@ -18,4 +18,4 @@ function ReduxPage() {
   );
 }
 
-export default ReduxPage;
+export default Redux;
