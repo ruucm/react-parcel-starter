@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import store from "./store";
 import { Field, reduxForm } from "redux-form";
 import validate from "./validate";
 

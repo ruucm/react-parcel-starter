@@ -5,6 +5,7 @@ import store from "./store/store";
 import { Counter } from "./Counter";
 import Counter2 from "./Counter2";
 import ArrayUpdate from "./ArrayUpdate";
+import { TestReduxForm } from "./TestReduxForm";
 
 function ReduxPage() {
   return (
@@ -12,6 +13,7 @@ function ReduxPage() {
       <Counter />
       <Counter2 />
       <ArrayUpdate />
+      <TestReduxForm />
     </Provider>
   );
 }
