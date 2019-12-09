@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import store from "./store";
+import map from "lodash/map";
 
 const Comp = ({ testArray, dispatch, ...props }) => {
   return (
@@ -30,10 +30,6 @@ const Comp = ({ testArray, dispatch, ...props }) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    count: state.count,
-    testArray: state.testArray
-  };
-}
-export default connect(mapStateToProps)(Comp);
+export default connect(state => ({
+  testArray: state.counterReducer.testArray
+}))(Comp);

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import store from "./store";
+import store from "./store/store";
 
 const Comp = () => {
   return (
@@ -19,8 +19,7 @@ const Comp = () => {
 
 function mapStateToProps(state) {
   return {
-    count: state.count,
-    testArray: state.testArray
+    count: state.counterReducer.count
   };
 }
 export default connect(mapStateToProps)(Comp);

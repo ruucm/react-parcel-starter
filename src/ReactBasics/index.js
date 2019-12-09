@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import map from "lodash/map";
 import UseHoverComp from "./UseHoverComp";
 import UseDataApiComp from "./UseDataApiComp";
 import UseMemoComp from "./UseMemoComp";
