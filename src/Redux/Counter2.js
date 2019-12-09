@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import store from "./store";
 
-const TestComp = () => {
+const Comp = () => {
   return (
     <div>
-      TestComp
+      Counter2
       <button
         onClick={() => {
           store.dispatch({ type: "INCREMENT" });
         }}
       >
-        INCREMENT(TestComp)
+        INCREMENT(Counter2)
       </button>
     </div>
   );
@@ -23,4 +23,4 @@ function mapStateToProps(state) {
     testArray: state.testArray
   };
 }
-export default connect(mapStateToProps)(TestComp);
+export default connect(mapStateToProps)(Comp);

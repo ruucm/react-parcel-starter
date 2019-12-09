@@ -1,12 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import AppRouter from './src/AppRouter'
-import { Provider } from 'react-redux'
-import store from './src/ReactBasics/store'
+import React from "react";
+import ReactDOM from "react-dom";
+import AppRouter from "./src/AppRouter";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>,
-  document.getElementById('root')
-)
+ReactDOM.render(<AppRouter />, document.getElementById("root"));
