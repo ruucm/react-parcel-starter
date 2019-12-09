@@ -3,20 +3,13 @@ import { connect } from "react-redux";
 import useCounter from "./useCounter";
 
 const Comp = () => {
-  const [count, cLoading, setCount] = useCounter();
-  console.log("count", count);
-  console.log("setCount", setCount);
+  const [count, setCount] = useCounter();
   return (
     <div>
       <h2>useCounter</h2>
       count: {count}
-      <button
-        onClick={() => {
-          dispatch({ type: "INCREMENT" });
-        }}
-      >
-        INCREMENT(useCounter)
-      </button>
+      <br />
+      <button onClick={() => setCount(count + 1)}>INCREMENT(useCounter)</button>
     </div>
   );
 };
