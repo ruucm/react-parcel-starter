@@ -7,7 +7,7 @@ import ReactBasics from "./ReactBasics";
 import Framer from "./Framer";
 import Flex from "./Flex";
 import Redux from "./Redux";
-import Context from "./Context";
+import Context from "./Context/ContextContainer";
 
 function AppRouter() {
   return (
