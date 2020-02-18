@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import Flex, { FlexItem } from "styled-flex-component";
 import { Store } from "./store";
@@ -54,31 +55,28 @@ function getUnseen(notifications) {
   return unseen.length;
 }
 
-const HeaderPresenter = () => (
-  <Header>
-    <Flex full justifyBetween alignCenter>
-      <FlexItem>
-        <h3>Antiredux</h3>
-      </FlexItem>
-      <FlexItem>
-        <Flex>
-          <HeaderIcon>user</HeaderIcon>
-          <HeaderIcon>cog</HeaderIcon>
-          <HeaderIcon>
-            bell
-            <Number>
-              <Store.Consumer>
-                {store => {
-                  console.log("store", store);
-                  return getUnseen(store.notifications);
-                }}
-              </Store.Consumer>
-            </Number>
-          </HeaderIcon>
-        </Flex>
-      </FlexItem>
-    </Flex>
-  </Header>
-);
+const HeaderPresenter = () => {
+  const store = useContext(Store);
+
+  return (
+    <Header>
+      <Flex full justifyBetween alignCenter>
+        <FlexItem>
+          <h3>Antiredux</h3>
+        </FlexItem>
+        <FlexItem>
+          <Flex>
+            <HeaderIcon>user</HeaderIcon>
+            <HeaderIcon>cog</HeaderIcon>
+            <HeaderIcon>
+              bell
+              <Number>{getUnseen(store.notifications)}</Number>
+            </HeaderIcon>
+          </Flex>
+        </FlexItem>
+      </Flex>
+    </Header>
+  );
+};
 
 export default HeaderPresenter;
