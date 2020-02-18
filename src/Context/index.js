@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
-import Notification from "./Notification";
+import Notification from "./Notification/index";
 import Header from "./Header";
 import { Store } from "./store";
 
@@ -23,14 +23,15 @@ function Comp() {
         text: "Waza!",
         seen: false
       }
-    }
+    },
+    count: 0
   });
   return (
     <React.Fragment>
-      {console.log("state!!!", state)}
       <Store.Provider
         value={{
           ...state,
+          setState,
           deleteNotification: id => {
             console.log("deleteNotification");
             console.log("id", id);
@@ -57,8 +58,6 @@ function Comp() {
             // });
           },
           seeNotification: id => {
-            console.log("seeNotification");
-            console.log("id", id);
             setState(prevState => {
               return {
                 ...prevState,
@@ -77,7 +76,7 @@ function Comp() {
         <Header />
         <Store.Consumer>
           {store => {
-            console.log("store!!", store);
+            console.log("new store!", store);
             return Object.keys(store.notifications).map(key => {
               return (
                 <Notification

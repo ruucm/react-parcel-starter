@@ -63,6 +63,7 @@ const HeaderPresenter = () => {
       <Flex full justifyBetween alignCenter>
         <FlexItem>
           <h3>Antiredux</h3>
+          <p>count : {store.count}</p>
         </FlexItem>
         <FlexItem>
           <Flex>

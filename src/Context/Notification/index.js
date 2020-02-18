@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import { useContext } from "react";
 import styled from "styled-components";
 import Flex, { FlexItem } from "styled-flex-component";
-import { Store } from "./store";
+import { Store } from "../store";
+import { Counter } from "./Counter";
 
 const Notification = styled.div`
   background-color: white;
@@ -59,6 +60,7 @@ const NotificationPresenter = ({ id, text, seen }) => {
     <Notification seen={seen}>
       <Flex alignCenter justifyBetween>
         <Title>{text}</Title>
+        <Counter />
         <FlexItem>
           <Button success seen={seen} onClick={() => store.seeNotification(id)}>
             see
