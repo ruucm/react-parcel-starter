@@ -7,6 +7,7 @@ import ReactBasics from "./ReactBasics";
 import Framer from "./Framer";
 import Flex from "./Flex";
 import Redux from "./Redux";
+import Context from "./Context";
 
 function AppRouter() {
   return (
@@ -30,6 +31,9 @@ function AppRouter() {
           <li>
             <Link to="/Redux/">Redux</Link>
           </li>
+          <li>
+            <Link to="/Context/">Context</Link>
+          </li>
         </ul>
 
         <Route path="/" exact component={App} />
@@ -37,6 +41,7 @@ function AppRouter() {
         <Route path="/framer/" component={Framer} />
         <Route path="/flex/" component={Flex} />
         <Route path="/Redux/" component={Redux} />
+        <Route path="/Context/" component={Context} />
       </div>
     </Router>
   );
