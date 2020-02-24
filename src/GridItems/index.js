@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import ItemsAnimation from "./ItemsAnimation";
+import FLIP from "./FLIP";
 
 export const PostLinks = styled.div`
   width: 100%;
@@ -40,7 +40,7 @@ export default function Comp() {
           </Column>
         ))}
       </PostLinks>
-      <ItemsAnimation />
+      <FLIP />
     </React.Fragment>
   );
 }
