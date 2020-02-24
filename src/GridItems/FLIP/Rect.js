@@ -24,13 +24,11 @@ export function Rect({ active, columnMap }) {
   }, [active]);
   return columnMap.length ? (
     <Wrap
-      style={{
-        width: columnMap[0].width,
-        height: columnMap[0].height
-      }}
       animate={{
         x: x,
-        y: y
+        y: y,
+        width: columnMap[0].width,
+        height: columnMap[0].height
       }}
       transition={{
         duration: 0.28
