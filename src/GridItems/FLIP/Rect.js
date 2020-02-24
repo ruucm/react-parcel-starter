@@ -10,25 +10,25 @@ export const Wrap = styled(motion.div)`
   opacity: 0.8;
 `;
 
-export function Rect({ active, columnMap }) {
+export function Rect({ active, childrenMap }) {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   useEffect(() => {
     console.log("active", active);
-    if (columnMap.length) {
-      let newX = columnMap[active].x;
-      let newY = columnMap[active].y - columnMap[0].y; // minus initial y
+    if (childrenMap.length) {
+      let newX = childrenMap[active].x;
+      let newY = childrenMap[active].y - childrenMap[0].y; // minus initial y
       setX(newX);
       setY(newY);
     }
   }, [active]);
-  return columnMap.length ? (
+  return childrenMap.length ? (
     <Wrap
       animate={{
         x: x,
         y: y,
-        width: columnMap[0].width,
-        height: columnMap[0].height
+        width: childrenMap[0].width,
+        height: childrenMap[0].height
       }}
       transition={{
         duration: 0.28

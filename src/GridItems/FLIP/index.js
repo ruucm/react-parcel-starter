@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import styled, { css } from "styled-components";
 import { Column } from "./Column";
 import { Rect } from "./Rect";
+import useChildrenMap from "./useChildrenMap";
 
 export const PostLinks = styled.div`
   display: grid;
@@ -20,24 +21,9 @@ export const PostLinks = styled.div`
 const data = [0, 1, 2, 3, 4, 5];
 
 export default function Comp() {
-  const observed = useRef(null);
   const [toggleColumns, setToggleColumns] = useState(false);
-  const [columnMap, setColumnMap] = useState([]);
   const [active, setActive] = useState(0);
-  useEffect(() => {
-    console.log("columnMap", columnMap);
-  }, [columnMap]);
-
-  useEffect(() => {
-    let columns = observed.current.children;
-    let newArr = [];
-    for (let i = 0; i < columns.length; i++) {
-      const element = columns[i];
-      let info = element.getBoundingClientRect();
-      newArr[i] = info;
-    }
-    setColumnMap(newArr);
-  }, [observed, toggleColumns]);
+  const [parentRef, childrenMap] = useChildrenMap();
 
   return (
     <div>
@@ -50,17 +36,10 @@ export default function Comp() {
       </button>
       <h1>active - {active}</h1>
 
-      <Rect active={active} columnMap={columnMap} />
-      <PostLinks big={toggleColumns} ref={observed}>
+      <Rect active={active} childrenMap={childrenMap} />
+      <PostLinks big={toggleColumns} ref={parentRef}>
         {data.map((item, id) => (
-          <Column
-            key={id}
-            index={id}
-            columnMap={columnMap}
-            setColumnMap={setColumnMap}
-            toggleColumns={toggleColumns}
-            setActive={setActive}
-          >
+          <Column key={id} index={id} setActive={setActive}>
             {item}
           </Column>
         ))}
