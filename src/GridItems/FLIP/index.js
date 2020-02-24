@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import styled, { css } from "styled-components";
+import { Column } from "./Column";
 
 export const PostLinks = styled.div`
   /* width: 100%; */
@@ -14,13 +15,6 @@ export const PostLinks = styled.div`
     css`
       grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     `}
-`;
-
-export const Column = styled.div`
-  background: skyblue;
-  width: 100%;
-  text-align: center;
-  transition: transform 1s;
 `;
 
 const data = [0, 1, 2, 3, 4, 5];
