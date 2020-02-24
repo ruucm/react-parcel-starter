@@ -8,6 +8,7 @@ import Framer from "./Framer";
 import Flex from "./Flex";
 import Redux from "./Redux";
 import Context from "./Context/ContextContainer";
+import GridItems from "./GridItems";
 
 function AppRouter() {
   return (
@@ -34,6 +35,9 @@ function AppRouter() {
           <li>
             <Link to="/Context/">Context</Link>
           </li>
+          <li>
+            <Link to="/GridItems/">GridItems</Link>
+          </li>
         </ul>
 
         <Route path="/" exact component={App} />
@@ -42,6 +46,7 @@ function AppRouter() {
         <Route path="/flex/" component={Flex} />
         <Route path="/Redux/" component={Redux} />
         <Route path="/Context/" component={Context} />
+        <Route path="/GridItems/" component={GridItems} />
       </div>
     </Router>
   );
