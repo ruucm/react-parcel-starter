@@ -21,7 +21,7 @@ export function Rect({ active, childrenMap }) {
       setX(newX);
       setY(newY);
     }
-  }, [active]);
+  }, [active, childrenMap]);
   return childrenMap.length ? (
     <Wrap
       animate={{
