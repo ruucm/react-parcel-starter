@@ -36,7 +36,7 @@
     "styled-flex-component": "^3.0.0"
   },
   "devDependencies": {
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "sass": "^1.16.1"
   }
 }
